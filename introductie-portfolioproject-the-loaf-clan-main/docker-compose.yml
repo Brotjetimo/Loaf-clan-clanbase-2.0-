@@ -1,0 +1,27 @@
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=loaf_clan
+      - MARIADB_USER=loaf_clan
+      - MARIADB_PASSWORD=loaf_clan
+      - MARIADB_DATABASE=loaf_clan
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+  clan-backend:
+    build:
+      context: ./Source/clanbase-backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+  clan-frontend:
+    build:
+      context: ./Source/frontend/Loaf_sports
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 8080:8080

@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  /* font-family: "Karmatic Arcade Font"; */
+  font-optical-sizing: auto;
+  font-weight: 0;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Karmatic Arcade Font;
+  src: url("ka1.ttf");
+}
+
+h1,
+h2,
+h4,
+h6,
+p {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+body {
+  background-color: rgba(41, 43, 49, 1);
+}
